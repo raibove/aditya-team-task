@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Clock</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onload="clock()">
+		<div class="container">
+			<div class="center"></div>
+			<div class="second" id="second"></div>
+			<div class="minute"></div>
+			<div class="hour"></div>
+		</div>
+		<script>
+			function clock(){				
+				var sec = document.getElementById("second");
+				var hour = document.getElementById('hour');
+				var minute = document.getElementById('minute');
+
+				setInterval(()=>{
+					d = new Date();
+				    hr = d.getHours();
+				    min = d.getMinutes();
+				    seconds = d.getSeconds();
+				    hr_rotation = 30 * hr + min / 2; 
+				    min_rotation = 6 * min;
+				    sec_rotation = 6 * seconds;
+						sec.style.transform = `rotate(${sec_rotation}deg)`;
+						minute.style.transform = `rotate(${min_rotation}deg)`;
+						hour.style.transforf = `rotate(${hr_rotation}deg)`;
+					},1000);
+			}
+
+		</script>
+	</body>
+</html>

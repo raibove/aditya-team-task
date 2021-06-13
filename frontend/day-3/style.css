@@ -1,0 +1,30 @@
+.body{
+	padding: 20px 30px;
+	margin:10px 100px;
+	border:2px solid black;
+}
+.title{
+	text-align: center;
+	font-size: 45px;
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+	color: blue;
+}
+.links{
+	text-align: center;
+	font-size: 19px;
+}
+a{
+	text-decoration: none;
+}
+.heading{
+	font-size: 25px;
+	font-family: cursive;
+	color: blue;
+}
+.project{
+	font-size: 22px;
+	margin: 0;
+	padding:0; 
+}

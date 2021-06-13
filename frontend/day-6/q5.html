@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Q-4</title>
+	</head>
+	<body>
+		<h1>Q 4</h1>
+		<script>
+			
+			arr = [1,2,8,5,6,4,2,1,2,4,4]
+			const mp = {}
+			arr.forEach(ele=>{
+				if(mp[ele]){
+					mp[ele]++;
+				}
+				else{
+					mp[ele]=1;
+				}
+			})
+			
+			let mx, fr=0;
+			for(const i in mp){
+				if(mp[i]>fr){
+					fr=mp[i]
+					mx=i
+				}
+			}
+
+			console.log(mx);
+
+		</script>
+	</body>
+</html>
