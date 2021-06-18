@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Q-4</title>
+	</head>
+	<body>
+		<h1>Q 4</h1>
+		<p>
+			Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books. var library = [ { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true }, { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true }, { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }]; 
+		</p>
+		<script>
+			
+			var library = [ { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true }, { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true }, { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }]; 
+
+			library.map((data)=>{
+				console.log("Author name: "+data.author)
+				console.log("Book name: "+data.title)
+				console.log("reading status: "+data.readingStatus)
+			}
+			)
+		</script>
+	</body>
+</html>
