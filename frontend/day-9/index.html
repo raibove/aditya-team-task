@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>day 8</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<p>Booked: <span id="b"></span>  Not Booked: <span id="nb"></span></p>
+		<div class="frame">
+		  <div class="center">
+				
+		  </div>
+		</div>
+
+		<script>
+		const center = document.querySelector(".center")
+		let booked = 0;
+		let notBooked = 100;
+
+		document.getElementById("b").innerHTML = booked
+		document.getElementById("nb").innerHTML = notBooked
+
+	
+			for(let i=0; i<100; i++ ){
+				const ele = document.createElement("div")
+				ele.style.border = "1px solid white"
+				ele.style.width = "40px"
+				ele.style.height = "40px"
+			 
+					
+				    ele.addEventListener("click", () => {
+				    	if (ele.classList.contains('white')) {
+				    		ele.classList.remove('white')
+				    		booked = booked-1;
+				    		notBooked = notBooked+1;
+
+
+				    	}
+				    	else{
+				    		ele.classList.add('white')
+				    		booked=booked+1
+				    		notBooked = notBooked-1
+
+						}
+
+
+						document.getElementById("b").innerHTML = booked
+						document.getElementById("nb").innerHTML = notBooked
+					});
+					
+				
+					center.appendChild(ele)
+			}
+		</script>
+	</body>
+</html>

@@ -6,16 +6,15 @@ body{
 .frame {
   margin: auto;
   margin-top: 50px;
-  width: 500px;
-  height: 450px;
-  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  width: 440px;
+  height: 420px;
   background: #ccc;
 }
 
 .center {
     display: grid;
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows: repeat(20,1fr);
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
 }
 
 .white{
