@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 11</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+		<div id="quiz">
+			
+		</div>	
+	</div>
+	<script type="text/javascript">
+		const data=[
+			{
+				"question": "5 + 7 = ?",
+                "options": [
+                    "10",
+                    "11",
+                    "12",
+                    "13"
+                ],
+                "answer": "12"
+			},
+			{
+				"question": "12 - 8 = ?",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "answer": "4"
+			},
+			{
+				"question": "What is the capital of Spain?",
+				"options": [
+					"Berlin",
+					"Buenos Aires",
+					"Madrid",
+					"San Juan"
+				],
+				"answer": "Buenos Aires"
+			},
+			{
+				"question": "What is 48,879 in hexidecimal?",
+				"options": [
+					"0x18C1",
+					"0xBEEF",
+					"0xDEAD",
+					"0x12D591"
+				],
+				"answer": "0x18C1"
+			},
+			{
+				"question": "What is 65 times 52?",
+				"options": [
+					"117",
+					"3120",
+					"3380",
+					"3520"
+				],
+				"answer": "3120"
+			},
+			
+		 
+];
+	
+		let score=0;
+		let q=0;
+		let quiz = document.getElementById("quiz")
+		//console.log(data.length)
+		NextQ()
+
+	
+		function NextQ(){
+			quiz.innerHTML=""
+			//console.log(q)
+			if(q===5){
+				showResult()
+				return
+			}
+				let question =  document.createElement('div');
+				question.innerHTML = data[q].question
+				question.classList.add('question')
+
+				quiz.append(question)
+
+				let ul = document.createElement('ul');
+				ul.classList.add('options')
+				for(let i=0; i<4;i++ ) {
+					let li = document.createElement('li');
+
+					li.innerHTML = data[q].options[i]
+					li.classList.add('list')
+					li.classList.remove('select')
+					li.onclick = function(){ 
+						li.classList.add('select')
+						/*
+						console.log(q)
+						console.log(data[q].options[i])
+						
+						if(data[q].options[i] == data[q].answer){
+							score = score+1
+						}
+						*/
+						//NextQ()
+					}
+					ul.append(li)
+
+				}
+				quiz.append(ul)
+				ul.onclick = function(){
+
+    				var target = getEventTarget(event);
+					console.log(target.innerHTML)
+					if(target.innerHTML == data[q].answer){
+							score = score+1
+						}
+				q=q+1
+					
+					NextQ()
+
+				}
+			}
+		
+			function getEventTarget(e) {
+				    e = e || window.event;
+				    return e.target || e.srcElement; 
+				}
+
+		function showResult(){
+			let sc = document.createElement('div')
+			sc.innerHTML = "Your score is: "+score
+				sc.classList.add('question')
+
+			quiz.append(sc)
+		}
+	</script>
+</body>
+</html>

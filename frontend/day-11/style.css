@@ -1,0 +1,53 @@
+body{
+	background-color: rgb(240,240,240);
+}
+
+.container{
+
+	background-color: white;
+	width: 40vw;
+	height: 50vh;
+	border-radius: 15px;
+	margin:auto;
+	margin-top: 10vh;
+	position: relative;
+}
+.submit{
+	width: inherit;
+	bottom: 0;
+	height: 8vh;
+	position: absolute;
+	border-radius: 0 0 15px 15px;
+	color: white;
+	background-color: #8e44ad;
+}
+.hide{
+	display: none;
+}
+
+#quiz{
+	font-size: 30px;
+}
+.question{
+	padding: 15px;
+	font-size: 35px;
+	font-weight:  bold;
+	text-align: center;
+}
+.options{
+	margin: 0;
+	margin-top: 5vh;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	width: 100%;
+}
+.list{
+	padding: 10px;
+}
+.list:hover{
+	background-color: #FFFDD0;
+}
+.select{
+	background-color: #FFFDD0;
+}
