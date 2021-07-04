@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> My Awesome Quote App</title>
+        <link rel="stylesheet" href="styles.css">
+    </head> 
+    <body>
+        <div class="container">
+            <div id="quote">
+                
+            </div>
+            <button onclick="generateQuote()"> New Quote</button>
+        </div>
+          <script>
+            const url = "https://api.quotable.io/random";
+            window.onload = generateQuote()
+            function generateQuote(){
+               fetch(url)
+              .then(function(data) {
+                     return data.json();
+                })
+                .then(function(data){    
+                document.getElementById("quote").innerHTML = data.content; 
+               })
+             .catch(function(err) {
+                console.log(err); 
+                });
+             } 
+          </script>
+    </body>
+
+<html />

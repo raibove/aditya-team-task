@@ -1,0 +1,29 @@
+body { 
+ background: linear-gradient(to right, #ff7300, #ff4800); 
+ color: #fff;
+ text-align: center;
+ align-items: center;
+ padding: 50px;
+}
+.quote-body { 
+ margin: auto; 
+ width: 400px; 
+ height: 200px; 
+ margin-top: 150px;
+}
+#quote { 
+ font-size: 40px; 
+ font-weight: bold;
+}
+.author {
+ font-weight: normal;
+ font-size: 20px
+}
+
+button{
+	background-color: blue;
+	padding: 10px;
+	color: white;
+	position: fixed;
+	margin-top: 60px;
+}
