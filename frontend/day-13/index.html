@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>Day 13</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="toDo" class="to-do">
+			<h2>To Do List</h2>
+			<input placeholder="Add to-to task here" id="input">
+			<span onclick="addToDo()" class="add-to-do">Add</span>
+		</div>
+		<div id="dropdiv" ondrop="drop(event)" ondragover="allowDrop(event)">  
+            <h3>Drop here to delete todo.</h3>
+    	</div>
+		<div class="container">
+			<ul id="list">
+				
+				
+			</ul>
+			<div id="done-todo" ondrop="dropDone(event)" ondragover="allowDrop(event)">
+				<p>DONE</p>
+				<ul id="done-list">
+					
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			let todos = []
+			window.onload = loadData();
+
+			function loadData(){
+				if(localStorage.getItem("todo")!==null){
+					let currToDos = JSON.parse(localStorage.getItem("todo"))
+					console.log(currToDos)
+					currToDos.forEach((item)=>{
+						todos.push(item);
+						let li = document.createElement("li");
+						let t = document.createTextNode(item.val);
+
+						li.appendChild(t);
+						li.setAttribute("draggable","true");
+						li.setAttribute("ondragstart","drag(event)");
+						li.setAttribute("id",`${item.id}`);
+						document.getElementById("list").appendChild(li);
+					})
+				}
+			}
+			function allowDrop(ev){
+				ev.preventDefault();
+			}
+
+			function drag(ev){
+				ev.dataTransfer.setData("text", ev.target.id);
+			}
+
+			function drop(ev){
+				ev.preventDefault();
+				let data = ev.dataTransfer.getData("text");
+				let el = document.getElementById(data) ;
+				el.parentNode.removeChild(el);
+
+				todos = JSON.parse(localStorage.getItem("todo"))
+				todos = todos.filter((item)=> item.id!=data);
+				localStorage.setItem("todo",JSON.stringify(todos))
+
+			}
+
+			function dropDone(ev){
+				ev.preventDefault();
+				let data = ev.dataTransfer.getData("text");
+				let el = document.getElementById(data);
+				el.parentNode.removeChild(el);
+
+
+				let li = document.createElement("li");
+				let t = document.createTextNode(el.innerHTML);
+
+
+				document.getElementById("done-list").appendChild(li);
+				console.log("t: "+el.innerHTML)
+
+			}
+			function addToDo(){
+				let li = document.createElement("li");
+				let inputValue = document.getElementById("input").value;
+				let t = document.createTextNode(inputValue);
+
+				let i = localStorage.getItem("i")
+				if( i ===null)
+					i=0;
+				else{
+					i++;
+				}
+				console.log("i: "+i);
+				localStorage.setItem("i",i);
+				li.appendChild(t);
+				li.setAttribute("draggable","true");
+				li.setAttribute("ondragstart","drag(event)");
+				li.setAttribute("id",`${i}`);
+				if(inputValue === ""){
+					alert("To-Do list cannot be empty")
+				}
+				else{
+					let temp ={
+						id:i,
+						val:inputValue
+					}
+					todos.push(temp);
+					localStorage.setItem("todo",JSON.stringify(todos));
+					document.getElementById("list").appendChild(li);
+				}
+				document.getElementById("input").value = "";
+			}
+		</script>
+	</body>
+</html>

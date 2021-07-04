@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+body{
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.container{
+
+	display: flex;
+
+}
+
+#list{
+	list-style:  none;
+	justify-content: center;
+	text-align: center;
+	width: 45vw;
+	height: 80vh;
+	border:solid black 1px;
+}/*
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  width: 50vw;
+}
+*/
+ul li:hover {
+  background: #ddd;
+}
+
+#done-todo{
+	width: 45vw;
+	height: 80vh;
+	border:solid black 1px;
+	margin:18px;
+}
+
+#input{
+	padding: 10px;
+}
+
+.add-to-do{
+
+	background-color: #44aa51;
+	width:30px;
+	height: 15px;
+	padding: 10px;
+}
+
+.to-do{
+
+}
+#dropdiv{
+	color: red;
+}

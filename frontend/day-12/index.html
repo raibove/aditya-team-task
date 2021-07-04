@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 12</title>
+</head>
+<body>
+	<div>
+		<input  name="todo">
+		<button id="add">Add</button>
+	</div>
+	<script>
+		const add = document.getElementById('add')
+		add.addEventListener('onclick', addToDo())
+
+		function addToDo(){
+			  var div = document.createElement('div');
+		       div.style.backgroundColor = "black";
+		       div.style.position = "absolute";
+		       div.style.left = "50px";
+		       div.style.top = "50px";
+
+      		 document.getElementsByTagName('body')[0].appendChild(div); 
+		}
+	</script>
+</body>
+</html>
